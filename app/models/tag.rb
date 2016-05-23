@@ -1,4 +1,4 @@
 class Tag < ApplicationRecord
-	has_many :task_tags
-	has_many :tasks, :through => :task_tags
+	belongs_to :user
+	has_and_belongs_to_many :tasks
 end

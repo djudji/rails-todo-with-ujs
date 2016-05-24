@@ -7,10 +7,13 @@
   <div class="container">
   	<div class="row">
       <div class="col-lg-8">
-      <div id="move">
+      <% @tasks.each do |task| %>
         <span class="glyphicon glyphicon-option-vertical"></span>
         <span class="glyphicon glyphicon-option-vertical move-closer"></span>
-        </div>
+        <span class="fa-square-o"></span>
+        <span class="task-title"><%= task.title %></span>
+        <p class="task-description"><%= task.description %></p>
+      <% end %>
       </div>
   	</div>
   </div>

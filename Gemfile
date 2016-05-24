@@ -33,6 +33,9 @@ gem 'devise'
 # Add Bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
 
+# Add FontAwesome
+gem 'font-awesome-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

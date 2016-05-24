@@ -13,6 +13,7 @@
         <span class="fa-square-o"></span>
         <span class="task-title"><%= task.title %></span>
         <p class="task-description"><%= task.description %></p>
+        <p class="tags"><% task.tags.each do |tag| %><span><%= tag.title %></span> <% end %></p>
       <% end %>
       </div>
   	</div>

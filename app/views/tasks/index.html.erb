@@ -10,7 +10,7 @@
       <% @tasks.each do |task| %>
         <span class="glyphicon glyphicon-option-vertical"></span>
         <span class="glyphicon glyphicon-option-vertical move-closer"></span>
-        <span class="fa-square-o"></span>
+        <span class="task-status"><%= task.finished %>/span>
         <span class="task-title"><%= task.title %></span>
         <p class="task-description"><%= task.description %></p>
         <p class="tags"><% task.tags.each do |tag| %><span><%= tag.title %></span> <% end %></p>

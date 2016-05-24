@@ -6,9 +6,12 @@
   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
   <div class="container">
   	<div class="row">
-  		<table>
-  			<th></th>
-  		</table>
+      <div class="col-lg-8">
+      <div id="move">
+        <span class="glyphicon glyphicon-option-vertical"></span>
+        <span class="glyphicon glyphicon-option-vertical move-closer"></span>
+        </div>
+      </div>
   	</div>
   </div>
 <% else %>

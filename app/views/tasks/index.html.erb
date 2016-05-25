@@ -20,8 +20,10 @@
                 </div>
               </div>
               <div class="col-md-8">
-                <span class="task-title"><%= task.title %></span><br />
-                <span class="task-description"><%= task.description %></span>
+                <%= link_to edit_task_path(task) do %>
+                  <span class="task-title"><%= task.title %></span><br />
+                  <span class="task-description"><%= task.description %></span>
+                <% end %>
                 <p class="tags"><% task.tags.each do |tag| %><span><%= tag.title %></span> <% end %></p>
               </div>
               <div class="col-md-2">

@@ -19,13 +19,15 @@
                   </span>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-8">
                 <span class="task-title"><%= task.title %></span><br />
                 <span class="task-description"><%= task.description %></span>
                 <p class="tags"><% task.tags.each do |tag| %><span><%= tag.title %></span> <% end %></p>
               </div>
               <div class="col-md-2">
-                
+                <span class="fa fa-exclamation-circle act-important"></span>
+                <span class="fa fa-star act-starred"></span>
+                <span class="glyphicon glyphicon-option-vertical act-additional"></span>
               </div> 
             </div>
           </div>

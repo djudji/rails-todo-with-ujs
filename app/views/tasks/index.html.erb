@@ -1,42 +1,42 @@
+<h1>Tasks</h1>
+<% if user_signed_in? %>
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-md-8">
+        <% @tasks.each do |task| %>
 
-
-<div class="container">
-  <div class="row">
-    <h1>Tasks</h1>
-    <% if user_signed_in? %>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8">
-            
-                <% @tasks.each do |task| %>
-                  <div class="form-inline">
-                    <div class="form-group">
-                    
-                      <span class="glyphicon glyphicon-option-vertical"></span>
-                      <span class="glyphicon glyphicon-option-vertical move-closer"></span>
-                      <span>
-                        <%= form_for task do |f| %>
-                          <%= f.check_box :finished %>
-                        <% end %>
-                      </span>
-
-                    </div>
-                  </div>
-
-                  <span class="task-title"><%= task.title %></span><br />
-                  <span class="task-description"><%= task.description %></span>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-2">
+                <div class="pull-right">
+                  <span class="glyphicon glyphicon-option-vertical"></span>
+                  <span class="glyphicon glyphicon-option-vertical move-closer"></span>
+                  <span class="checkbox-inline checkbox-align">
+                      <%= form_for task do |f| %>
+                        <%= f.check_box :finished %>
+                      <% end %>
+                  </span>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <span class="task-title"><%= task.title %></span><br />
+                <span class="task-description"><%= task.description %></span>
+                <p class="tags"><% task.tags.each do |tag| %><span><%= tag.title %></span> <% end %></p>
+              </div>
+              <div class="col-md-2">
                 
-                  <p class="tags"><% task.tags.each do |tag| %><span><%= tag.title %></span> <% end %></p>
-
-                <% end %>
-              
-              
+              </div> 
+            </div>
           </div>
-          <div class="col-md-8">
-            <%= link_to 'New Task', new_task_path, class:"btn btn-md btn-primary" %>
-          </div>
-        </div>
+          
+        <% end %>
       </div>
-    <% end %>
+
+      <div class="col-md-8">
+        <%= link_to 'New Task', new_task_path, class:"btn btn-md btn-primary" %>
+      </div>
+
+    </div>
   </div>
-</div>
+<% end %>

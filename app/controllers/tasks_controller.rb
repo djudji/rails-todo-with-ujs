@@ -15,17 +15,20 @@ class TasksController < ApplicationController
 	end
 
 	def create
-		@task = Task.new(task_params)
-		if task.save
-			redirect_to @task, notice: "Task successfully created!"
+		@task = current_user.tasks.new(task_params)
+		if @task.save
+			redirect_to root_url, notice: "Task successfully created!"
+			#render :index
 		else
 			render :new
 		end
 	end
 
 	def update
-		if task.update(task_params)
-			redirect_to @task, notice: "Task successfully updated!"
+		if @task.update(task_params)
+			@tasks = current_user.tasks
+			render :index
+			#redirect_to @task, notice: "Task successfully updated!"
 		else
 			render :edit
 		end

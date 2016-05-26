@@ -26,8 +26,8 @@
                 <p class="tags"><% task.tags.each do |tag| %><span><%= tag.title %></span> <% end %></p>
               </div>
               <div class="col-md-2">
-                <% if task.important %><span class="fa fa-exclamation-circle act-important"></span><% end %>
-                <% if task.starred %><span class="fa fa-star act-starred"></span><% end %>
+                <% if task.important %><span class="fa fa-exclamation-circle act-important"></span><% else %><span class="fa fa-exclamation-circle act-important empty-icons"></span><% end %>
+                <% if task.starred %><span class="fa fa-star act-starred"></span><% else %><span class="fa fa-star act-starred empty-icons"></span><% end %>
                 <span class="glyphicon glyphicon-option-vertical act-additional"></span>
               </div> 
             </div>

@@ -18,9 +18,19 @@
 			<%= f.label :description %><br/>
 			<%= f.text_area :description %>
 		</div>
-		<div class="form-group">
-			<%= f.label :finished %>
-			<%= f.check_box :finished %>
+		<div class="form-inline">
+			<div class="form-group">
+				<%= f.label :finished %>
+				<%= f.check_box :finished %>
+			</div>
+			<div class="form-group">
+				<%= f.label :important %>
+				<%= f.check_box :important %>
+			</div>
+			<div class="form-group">
+				<%= f.label :starred %>
+				<%= f.check_box :starred %>
+			</div>
 		</div>
   <%= f.submit class:"btn btn-md btn-primary" %>
 	<% end %>

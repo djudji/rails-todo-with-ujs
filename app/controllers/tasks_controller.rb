@@ -1,7 +1,8 @@
 class TasksController < ApplicationController
 	before_action :set_task, only: [:show, :edit, :update, :destroy]
+	before_action :set_tasks, only: [:index, :update]
+	
 	def index
-		@tasks = current_user.tasks
 	end
 
 	def show
@@ -26,7 +27,6 @@ class TasksController < ApplicationController
 
 	def update
 		if @task.update(task_params)
-			@tasks = current_user.tasks
 			render :index
 			#redirect_to @task, notice: "Task successfully updated!"
 		else
@@ -44,6 +44,10 @@ class TasksController < ApplicationController
 
 		def set_task
 			@task = Task.find(params[:id])
+		end
+
+		def set_tasks
+			@tasks = current_user.tasks
 		end
 
 		def task_params

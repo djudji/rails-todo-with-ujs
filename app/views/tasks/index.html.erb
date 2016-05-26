@@ -19,7 +19,7 @@
                 </div>
               </div>
               <div class="col-md-8">
-                <%= link_to edit_task_path(task), { :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window' } do %>
+                <%= link_to edit_task_path(task), { :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'link-block' } do %>
                   <span class="task-title"><%= task.title %></span><br />
                   <span class="task-description"><%= task.description %></span>
                 <% end %>

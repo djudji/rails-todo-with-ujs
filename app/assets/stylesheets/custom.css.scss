@@ -25,6 +25,15 @@
 	visibility: hidden;
 }
 
+.link-block {
+	display: block;
+}
+
+div.link-block:hover, a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
 /* SubMenu */
 .dropdown-submenu { 
 	position: relative; 

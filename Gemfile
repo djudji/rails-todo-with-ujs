@@ -36,7 +36,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 # Add FontAwesome
 gem 'font-awesome-rails'
 
-# Add Bootstrap modals
+# Add bootstrap modal gem
 gem 'bootstrap-modal-rails'
 
 # Use Capistrano for deployment

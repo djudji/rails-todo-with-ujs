@@ -13,7 +13,7 @@
                   <span class="glyphicon glyphicon-option-vertical move-closer"></span>
                   <span class="checkbox-inline checkbox-align">
                       <%= form_for task do |f| %>
-                        <%= f.check_box :finished %>
+                        <%= f.check_box :finished, data: { no_turbolink: true } %>
                       <% end %>
                   </span>
                 </div>

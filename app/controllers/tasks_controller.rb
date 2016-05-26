@@ -31,7 +31,7 @@ class TasksController < ApplicationController
 
 	def update
 		if @task.update(task_params)
-			render :index
+			redirect_to root_url
 			#redirect_to @task, notice: "Task successfully updated!"
 		else
 			render :edit

@@ -33,12 +33,39 @@
                     <span class="glyphicon glyphicon-option-vertical act-additional"></span>
                   </a>
                   <ul class="dropdown-menu">
-                    <%= form_for task do |f| %>
-                      <li> <%= link_to task_path(task.id, task: {finished: true}), method: put  do %><span class="fa fa-check-circle"></span> Mark as done<% end %> </li>
-                      <li><span class="fa fa-check-circle"></span> Mark as done</li>
-                      <li><span class="fa fa-exclamation-circle"></span> Remove important</li>
-                      <li><span class="fa fa-star"></span> Add star</li>
-                    <% end %>  
+                    <li>
+                      <% if task.finished? %>
+                        <%= link_to task_path(task, task: {finished: false}), method: :put  do %>
+                          <span class="fa fa-check-circle"></span> Mark as undone
+                        <% end %>
+                      <% else %>
+                        <%= link_to task_path(task, task: {finished: true}), method: :put  do %>
+                          <span class="fa fa-check-circle"></span> Mark as done
+                        <% end %>
+                      <% end %>
+                    </li>
+                    <li>
+                      <% if task.important? %>
+                        <%= link_to task_path(task, task: {important: false}), method: :put  do %>
+                          <span class="fa fa-exclamation-circle"></span> Remove important
+                        <% end %>
+                      <% else %>
+                        <%= link_to task_path(task, task: {important: true}), method: :put  do %>
+                          <span class="fa fa-exclamation-circle"></span> Make important
+                        <% end %>
+                      <% end %>
+                    </li>
+                    <li>
+                      <% if task.starred? %>
+                        <%= link_to task_path(task, task: {starred: false}), method: :put  do %>
+                          <span class="fa fa-star"></span> Remove star
+                        <% end %>
+                      <% else %>
+                        <%= link_to task_path(task, task: {starred: true}), method: :put  do %>
+                          <span class="fa fa-star"></span> Add star
+                        <% end %>
+                      <% end %>
+                    </li>
                   </ul>
                 </span>
               </div> 

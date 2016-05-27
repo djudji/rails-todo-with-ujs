@@ -12,7 +12,7 @@
 	margin-right: 5px;
 }
 .act-starred {
-	margin: 0 10px;
+	margin: 0 5px;
 }
 .act-additional {
 	margin-left: 5px;
@@ -32,6 +32,10 @@
 div.link-block:hover, a:hover {
     text-decoration: none;
     color: #000;
+}
+
+div.col-md-2 ul.dropdown-menu > li {
+	margin-left: 15px;
 }
 
 /* SubMenu */

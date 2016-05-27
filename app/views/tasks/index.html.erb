@@ -28,7 +28,16 @@
               <div class="col-md-2">
                 <% if task.important %><span class="fa fa-exclamation-circle act-important"></span><% else %><span class="fa fa-exclamation-circle act-important empty-icons"></span><% end %>
                 <% if task.starred %><span class="fa fa-star act-starred"></span><% else %><span class="fa fa-star act-starred empty-icons"></span><% end %>
-                <span class="glyphicon glyphicon-option-vertical act-additional"></span>
+                <span class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <span class="glyphicon glyphicon-option-vertical act-additional"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><span class="fa fa-check-circle"></span> Mark as done</li>
+                    <li><span class="fa fa-exclamation-circle"></span> Remove important</li>
+                    <li><span class="fa fa-star"></span> Add star</li>
+                  </ul>
+                </span>
               </div> 
             </div>
           </div>

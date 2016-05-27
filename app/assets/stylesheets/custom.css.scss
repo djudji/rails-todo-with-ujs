@@ -38,6 +38,22 @@ div.col-md-2 ul.dropdown-menu > li {
 	padding: 0 5px;
 }
 
+ul.f32 > li {
+	list-style-type: none;
+}
+
+.flag-text-element {
+	/*position: absolute;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  /*transform: translate(-50%, -50%);*/
+}
+
+.flag-element {
+	
+}
+
 /* SubMenu */
 .dropdown-submenu { 
 	position: relative; 

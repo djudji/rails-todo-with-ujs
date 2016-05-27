@@ -33,9 +33,12 @@
                     <span class="glyphicon glyphicon-option-vertical act-additional"></span>
                   </a>
                   <ul class="dropdown-menu">
-                    <li><span class="fa fa-check-circle"></span> Mark as done</li>
-                    <li><span class="fa fa-exclamation-circle"></span> Remove important</li>
-                    <li><span class="fa fa-star"></span> Add star</li>
+                    <%= form_for task do |f| %>
+                      <li> <%= link_to task_path(task.id, task: {finished: true}), method: put  do %><span class="fa fa-check-circle"></span> Mark as done<% end %> </li>
+                      <li><span class="fa fa-check-circle"></span> Mark as done</li>
+                      <li><span class="fa fa-exclamation-circle"></span> Remove important</li>
+                      <li><span class="fa fa-star"></span> Add star</li>
+                    <% end %>  
                   </ul>
                 </span>
               </div> 

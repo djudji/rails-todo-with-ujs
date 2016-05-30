@@ -23,7 +23,7 @@
                   <span class="task-title"><%= task.title %></span><br />
                   <span class="task-description"><%= task.description %></span>
                 <% end %>
-                <p class="tags"><%= task.all_tags %></p>
+                <p class="tags"><%=raw tag_links(task.all_tags)%></p>
               </div>
               <div class="col-md-2">
                 <% if task.important %><span class="fa fa-exclamation-circle act-important"></span><% else %><span class="fa fa-exclamation-circle act-important empty-icons"></span><% end %>
@@ -82,8 +82,8 @@
       <div id="modal-window" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
         <div class="container">
           <div class="row">
-            <div class="col-md-12">
-              <div class="modal-window">
+            <div class="col-md-6">
+              <div class="modal-window modal-vertical-centered">
 
               </div>
             </div>

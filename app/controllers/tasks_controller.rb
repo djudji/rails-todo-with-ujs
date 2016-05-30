@@ -3,6 +3,11 @@ class TasksController < ApplicationController
 	before_action :set_tasks, only: [:index, :update]
 	
 	def index
+		if params[:tag]
+			@tasks = current_user.tasks.tagged_with(params[:tag])
+		else
+			@tasks
+		end
 	end
 
 	def show

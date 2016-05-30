@@ -54,6 +54,14 @@ ul.f32 > li {
 	
 }
 
+/* Modal Window */
+
+.modal-vertical-centered {
+  transform: translate(50%, 50%) !important;
+  -ms-transform: translate(50%, 50%) !important; /* IE 9 */
+  -webkit-transform: translate(50%, 50%) !important; /* Safari and Chrome */
+}
+
 /* SubMenu */
 .dropdown-submenu { 
 	position: relative; 

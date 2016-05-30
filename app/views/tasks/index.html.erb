@@ -1,95 +1,81 @@
 <% if user_signed_in? %>
-  <div class="container">
-    <div class="row">
-      
-      <div class="col-md-12">
-        <% @tasks.each do |task| %>
-
-          <div class="container">
-            <div class="row">
-              <div class="col-md-2">
-                <div class="pull-right">
-                  <span class="glyphicon glyphicon-option-vertical"></span>
-                  <span class="glyphicon glyphicon-option-vertical move-closer"></span>
-                  <span class="checkbox-inline checkbox-align">
-                      <%= form_for task do |f| %>
-                        <%= f.check_box :finished, data: { no_turbolink: true } %>
-                      <% end %>
-                  </span>
-                </div>
-              </div>
-              <div class="col-md-8">
-                <%= link_to edit_task_path(task), { :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'link-block' } do %>
-                  <span class="task-title"><%= task.title %></span><br />
-                  <span class="task-description"><%= task.description %></span>
-                <% end %>
-                <p class="tags"><%=raw tag_links(task.all_tags)%></p>
-              </div>
-              <div class="col-md-2">
-                <% if task.important %><span class="fa fa-exclamation-circle act-important"></span><% else %><span class="fa fa-exclamation-circle act-important empty-icons"></span><% end %>
-                <% if task.starred %><span class="fa fa-star act-starred"></span><% else %><span class="fa fa-star act-starred empty-icons"></span><% end %>
-                <span class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    <span class="glyphicon glyphicon-option-vertical act-additional"></span>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <% if task.finished? %>
-                        <%= link_to task_path(task, task: {finished: false}), method: :put  do %>
-                          <span class="fa fa-check-circle"></span> Mark as undone
-                        <% end %>
-                      <% else %>
-                        <%= link_to task_path(task, task: {finished: true}), method: :put  do %>
-                          <span class="fa fa-check-circle"></span> Mark as done
-                        <% end %>
-                      <% end %>
-                    </li>
-                    <li>
-                      <% if task.important? %>
-                        <%= link_to task_path(task, task: {important: false}), method: :put  do %>
-                          <span class="fa fa-exclamation-circle"></span> Remove important
-                        <% end %>
-                      <% else %>
-                        <%= link_to task_path(task, task: {important: true}), method: :put  do %>
-                          <span class="fa fa-exclamation-circle"></span> Make important
-                        <% end %>
-                      <% end %>
-                    </li>
-                    <li>
-                      <% if task.starred? %>
-                        <%= link_to task_path(task, task: {starred: false}), method: :put  do %>
-                          <span class="fa fa-star"></span> Remove star
-                        <% end %>
-                      <% else %>
-                        <%= link_to task_path(task, task: {starred: true}), method: :put  do %>
-                          <span class="fa fa-star"></span> Add star
-                        <% end %>
-                      <% end %>
-                    </li>
-                  </ul>
-                </span>
-              </div> 
-            </div>
+  <div class="container-fluid">
+    <% @tasks.each do |task| %>
+      <div class="row">
+        <div class="col-md-1">
+          <div class="pull-right">
+            <span class="glyphicon glyphicon-option-vertical"></span>
+            <span class="glyphicon glyphicon-option-vertical move-closer"></span>
+            <span class="checkbox-inline checkbox-align">
+              <%= form_for task do |f| %>
+                <%= f.check_box :finished, data: { no_turbolink: true } %>
+              <% end %>
+            </span>
           </div>
-          
-        <% end %>
+        </div>
+        <div class="col-md-8">
+          <%= link_to edit_task_path(task), { :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'link-block' } do %>
+            <span class="task-title"><%= task.title %></span><br />
+            <span class="task-description"><%= task.description %></span>
+          <% end %>
+          <p class="tags"><%=raw tag_links(task.all_tags)%></p>
+        </div>
+        <div class="col-md-1">
+          <% if task.important %><span class="fa fa-exclamation-circle act-important"></span><% else %><span class="fa fa-exclamation-circle act-important empty-icons"></span><% end %>
+          <% if task.starred %><span class="fa fa-star act-starred"></span><% else %><span class="fa fa-star act-starred empty-icons"></span><% end %>
+          <span class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="glyphicon glyphicon-option-vertical act-additional"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <% if task.finished? %>
+                  <%= link_to task_path(task, task: {finished: false}), method: :put  do %>
+                    <span class="fa fa-check-circle"></span> Mark as undone
+                  <% end %>
+                <% else %>
+                  <%= link_to task_path(task, task: {finished: true}), method: :put  do %>
+                    <span class="fa fa-check-circle"></span> Mark as done
+                  <% end %>
+                <% end %>
+              </li>
+              <li>
+                <% if task.important? %>
+                  <%= link_to task_path(task, task: {important: false}), method: :put  do %>
+                    <span class="fa fa-exclamation-circle"></span> Remove important
+                  <% end %>
+                <% else %>
+                  <%= link_to task_path(task, task: {important: true}), method: :put  do %>
+                    <span class="fa fa-exclamation-circle"></span> Make important
+                  <% end %>
+                <% end %>
+              </li>
+              <li>
+                <% if task.starred? %>
+                  <%= link_to task_path(task, task: {starred: false}), method: :put  do %>
+                    <span class="fa fa-star"></span> Remove star
+                  <% end %>
+                <% else %>
+                  <%= link_to task_path(task, task: {starred: true}), method: :put  do %>
+                    <span class="fa fa-star"></span> Add star
+                  <% end %>
+                <% end %>
+              </li>
+            </ul>
+          </span>
+        </div>      
       </div>
+    <% end %>
 
-      <div class="col-md-12">
-        <%= link_to 'New Task', new_task_path,  { class:"btn btn-md btn-primary", :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window' }  %>
-      </div>
-      
-      <div id="modal-window" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="modal-window modal-vertical-centered">
+    <div id="modal-window" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="modal-window modal-vertical-centered">
 
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </div>
+
   </div>
 <% end %>

@@ -23,7 +23,7 @@
                   <span class="task-title"><%= task.title %></span><br />
                   <span class="task-description"><%= task.description %></span>
                 <% end %>
-                <p class="tags"><% task.tags.each do |tag| %><span><%= tag.title %></span> <% end %></p>
+                <p class="tags"><%= task.all_tags %></p>
               </div>
               <div class="col-md-2">
                 <% if task.important %><span class="fa fa-exclamation-circle act-important"></span><% else %><span class="fa fa-exclamation-circle act-important empty-icons"></span><% end %>

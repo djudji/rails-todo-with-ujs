@@ -14,9 +14,44 @@
 	  <%= render 'layouts/navigation' %>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-lg-2 col-md-2">
+				<div class="col-lg-2 col-md-2 text-center">
 					<h1><%= link_to root_path do %><span class="fa fa-check-square"></span> To-Do<% end %></h1>
         	<%= link_to 'New Task', new_task_path,  { class:"btn btn-md btn-primary", :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window' }  %>
+        	<div class="row">
+        		<div id="all-tasks-filter" class="col-lg-8 col-md-8">
+        			<%= link_to do %>
+	        			<span class="fa fa-align-justify" aria-hidden="true"></span> 
+	        			<span class="filter-txt">All Tasks</span>
+        			<% end %>
+        		</div>
+        		<div id="filters" class="col-lg-8 col-md-8">
+        			<p class="filters-section-heading">Filters</p><br>
+        			<%= link_to do %>
+	        			<span class="fa fa-star" aria-hidden="true"></span> 
+	        			<span class="filter-txt">Starred</span>
+        			<% end %><br>
+        			<%= link_to do %>
+	        			<span class="fa fa-exclamation-circle" aria-hidden="true"></span> 
+	        			<span class="filter-txt">Priority</span>
+        			<% end %><br>
+        			<%= link_to do %>
+	        			<span class="fa fa-align-justify" aria-hidden="true"></span> 
+	        			<span class="filter-txt">Scheduled</span>
+        			<% end %><br>
+        			<%= link_to do %>
+	        			<span class="fa fa-align-justify" aria-hidden="true"></span> 
+	        			<span class="filter-txt">Today</span>
+        			<% end %><br>
+        			<%= link_to do %>
+	        			<span class="fa fa-align-justify" aria-hidden="true"></span> 
+	        			<span class="filter-txt">Done</span>
+        			<% end %><br>
+        			<%= link_to do %>
+	        			<span class="fa fa-align-justify" aria-hidden="true"></span> 
+	        			<span class="filter-txt">Deleted</span>
+        			<% end %><br>
+        		</div>
+        	</div>
 				</div>
 				<div class="col-lg-10 col-md-10">
 					<%= yield %>

@@ -21,4 +21,5 @@ class Task < ApplicationRecord
 		def self.tagged_with(name)
 			Tag.find_by_name!(name).tasks
 		end
+		
 end

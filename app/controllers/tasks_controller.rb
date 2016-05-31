@@ -5,6 +5,12 @@ class TasksController < ApplicationController
 	def index
 		if params[:tag]
 			@tasks = current_user.tasks.tagged_with(params[:tag])
+		elsif params[:important]
+			@tasks = current_user.tasks.important
+		elsif params[:starred]
+			@tasks = current_user.tasks.starred
+		elsif params[:finished]
+			@tasks = current_user.tasks.finished
 		else
 			@tasks
 		end

@@ -2,21 +2,148 @@
 @import "bootstrap";
 @import "font-awesome";
 
+/* Vertical spacing (Margins) */
+/* From the top */
+
+.vspace-top-5 {
+	margin-top: 5px;
+}
+
+.vspace-top-10 {
+	margin-top: 10px;
+}
+
+.vspace-top-15 {
+	margin-top: 15px;
+}
+
+.vspace-top-20 {
+	margin-top: 20px;
+}
+
+.vspace-top-25 {
+	margin-top: 25px;
+}
+
+.vspace-top-30 {
+	margin-top: 30px;
+}
+
+/* From the bottom */
+
+.vspace-bottom-5 {
+	margin-bottom: 5px;
+}
+
+.vspace-bottom-10 {
+	margin-bottom: 10px;
+}
+
+.vspace-bottom-15 {
+	margin-bottom: 15px;
+}
+
+.vspace-bottom-20 {
+	margin-bottom: 20px;
+}
+
+.vspace-bottom-25 {
+	margin-bottom: 25px;
+}
+
+.vspace-bottom-30 {
+	margin-bottom: 30px;
+}
+
+/* Horizontal spacing (Margins) */
+/* From the left */
+
+.hspace-left-5 {
+	margin-left: 5px;
+}
+
+.hspace-left-10 {
+	margin-left: 10px;
+}
+
+.hspace-left-15 {
+	margin-left: 15px;
+}
+
+.hspace-left-20 {
+	margin-left: 20px;
+}
+
+.hspace-left-25 {
+	margin-left: 25px;
+}
+
+.hspace-left-30 {
+	margin-left: 30px;
+}
+
+/* From the right */
+
+.hspace-right-5 {
+	margin-right: 5px;
+}
+
+.hspace-right-10 {
+	margin-right: 10px;
+}
+
+.hspace-right-15 {
+	margin-right: 15px;
+}
+
+.hspace-right-20 {
+	margin-right: 20px;
+}
+
+.hspace-right-25 {
+	margin-right: 25px;
+}
+
+.hspace-right-30 {
+	margin-right: 30px;
+}
+
+
+
+
+/***** CUSTOM *****/
+
+.half-width {
+	width: 50%;
+}
+
+.half-width-block {
+	@extend .half-width;
+	display: block;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.full-width-block {
+	@extend .full-width;
+	display: block;
+}
+
+ul#filter-list li {
+	list-style-type: none;
+	margin: 7px 0 7px -37px;
+	display: block;
+}
+
 .move-closer {
 	margin-left: -13px;
 }
 .checkbox-align {
 	vertical-align: top !important;
 }
-.act-important {
-	margin-right: 5px;
-}
-.act-starred {
-	margin: 0 5px;
-}
-.act-additional {
-	margin-left: 5px;
-}
+
 .modal-window {
 	background-color: #fff;
 }
@@ -42,16 +169,9 @@ ul.f32 > li {
 	list-style-type: none;
 }
 
-#all-tasks-filter {
-	margin-top: 25px;
-}
 
-.filter-txt {
-	margin-left: 15px;
-}
-
-.filters-section-heading {
-	margin: 15px 0 5px -50px;
+.filters-heading {
+	margin: 15px 0 5px 0;
 }
 
 .flag-text-element {

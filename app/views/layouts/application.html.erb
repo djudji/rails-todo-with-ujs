@@ -12,47 +12,68 @@
 
   <body>
 	  <%= render 'layouts/navigation' %>
+
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-lg-2 col-md-2 text-center">
-					<h1><%= link_to root_path do %><span class="fa fa-check-square"></span> To-Do<% end %></h1>
-        	<%= link_to 'New Task', new_task_path,  { class:"btn btn-md btn-primary", :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window' }  %>
-        	<div class="row">
-        		<div id="all-tasks-filter" class="col-lg-8 col-md-8">
-        			<%= link_to do %>
-	        			<span class="fa fa-align-justify" aria-hidden="true"></span> 
-	        			<span class="filter-txt">All Tasks</span>
-        			<% end %>
-        		</div>
-        		<div id="filters" class="col-lg-8 col-md-8">
-        			<p class="filters-section-heading">Filters</p><br>
-        			<%= link_to do %>
-	        			<span class="fa fa-star" aria-hidden="true"></span> 
-	        			<span class="filter-txt">Starred</span>
-        			<% end %><br>
-        			<%= link_to do %>
-	        			<span class="fa fa-exclamation-circle" aria-hidden="true"></span> 
-	        			<span class="filter-txt">Priority</span>
-        			<% end %><br>
-        			<%= link_to do %>
-	        			<span class="fa fa-align-justify" aria-hidden="true"></span> 
-	        			<span class="filter-txt">Scheduled</span>
-        			<% end %><br>
-        			<%= link_to do %>
-	        			<span class="fa fa-align-justify" aria-hidden="true"></span> 
-	        			<span class="filter-txt">Today</span>
-        			<% end %><br>
-        			<%= link_to do %>
-	        			<span class="fa fa-align-justify" aria-hidden="true"></span> 
-	        			<span class="filter-txt">Done</span>
-        			<% end %><br>
-        			<%= link_to do %>
-	        			<span class="fa fa-align-justify" aria-hidden="true"></span> 
-	        			<span class="filter-txt">Deleted</span>
-        			<% end %><br>
-        		</div>
-        	</div>
-				</div>
+            <% if user_signed_in? %>
+      		    <div class="col-lg-2 col-md-2">
+                <div class="text-center">
+    			         <h1><%= link_to root_path do %><span class="fa fa-check-square"></span> To-Do<% end %></h1>
+  	               <%= link_to 'New Task', new_task_path,  { class:"btn btn-md btn-primary vspace-top-25", :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window' }  %>
+                </div>
+              	<div class="row">
+              		<div class="col-lg-12 col-md-12">
+                    <div class="hspace-left-20">
+                      <div class="vspace-top-25">
+                  			<%= link_to root_path, class: "full-width-block" do %>
+          	        			<span class="fa fa-align-justify" aria-hidden="true"></span> 
+          	        			<span class="hspace-left-15">All Tasks</span>
+                  			<% end %>
+                      </div>
+                			<p class="vspace-top-10 vspace-bottom-20">Filters</p>
+                      <ul id="filter-list">
+                        <li>
+                          <%= link_to "", class:"full-width-block" do %>
+                            <span class="fa fa-star" aria-hidden="true"></span> 
+                            <span class="hspace-left-15">Starred</span>
+                          <% end %>
+                        </li>
+                        <li>
+                          <%= link_to "", class:"vspace-top-5 vspace-bottom-5 full-width-block" do %>
+                            <span class="fa fa-exclamation-circle" aria-hidden="true"></span> 
+                            <span class="hspace-left-15">Priority</span>
+                          <% end %>
+                        </li>
+                        <li>
+                          <%= link_to "", class:"vspace-top-5 vspace-bottom-5 full-width-block" do %>
+                            <span class="fa fa-clock-o" aria-hidden="true"></span> 
+                            <span class="hspace-left-15">Scheduled</span>
+                          <% end %>
+                        </li>
+                        <li>
+                          <%= link_to "", class:"vspace-top-5 vspace-bottom-5 full-width-block" do %>
+                            <span class="fa fa-calendar-o" aria-hidden="true"></span> 
+                            <span class="hspace-left-15">Today</span>
+                          <% end %>
+                        </li>
+                        <li>
+                          <%= link_to "", class:"vspace-top-5 vspace-bottom-5 full-width-block" do %>
+                            <span class="fa fa-check" aria-hidden="true"></span> 
+                            <span class="hspace-left-15">Done</span>
+                          <% end %>
+                        </li>
+                        <li>
+                          <%= link_to "", class:"vspace-top-5 vspace-bottom-5 full-width-block" do %>
+                            <span class="fa fa-trash-o" aria-hidden="true"></span> 
+                            <span class="hspace-left-15">Deleted</span>
+                          <% end %>
+                        </li>
+                      </ul>
+                    </div>
+              		</div>
+              	</div>
+        			</div>
+            <% end %>
 				<div class="col-lg-10 col-md-10">
 					<%= yield %>
 				</div>

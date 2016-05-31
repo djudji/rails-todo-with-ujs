@@ -4,6 +4,10 @@ class Task < ApplicationRecord
 		belongs_to :user
 		has_and_belongs_to_many :tags
 
+		scope :important, -> { where(important: true) }
+		scope :starred, -> { where(starred: true) }
+		scope :finished, -> { where(finished: true) }
+
 		def all_tags=(names)
 			self.tags = names.split(",").map do |name|
 				Tag.where(name: name.strip).first_or_create!

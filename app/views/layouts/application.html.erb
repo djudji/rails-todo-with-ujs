@@ -45,13 +45,13 @@
                           <% end %>
                         </li>
                         <li>
-                          <%= link_to "", class:"vspace-top-5 vspace-bottom-5 full-width-block" do %>
+                          <%= link_to tasks_path(scheduled: true), class:"vspace-top-5 vspace-bottom-5 full-width-block" do %>
                             <span class="fa fa-clock-o" aria-hidden="true"></span> 
                             <span class="hspace-left-15">Scheduled</span>
                           <% end %>
                         </li>
                         <li>
-                          <%= link_to "", class:"vspace-top-5 vspace-bottom-5 full-width-block" do %>
+                          <%= link_to tasks_path(today: true), class:"vspace-top-5 vspace-bottom-5 full-width-block" do %>
                             <span class="fa fa-calendar-o" aria-hidden="true"></span> 
                             <span class="hspace-left-15">Today</span>
                           <% end %>
@@ -70,7 +70,7 @@
                         </li>
                       </ul>
                       <p class="vspace-top-10 vspace-bottom-20">Tags</p>
-                      
+
                     </div>
               		</div>
               	</div>

@@ -6,6 +6,8 @@ class Task < ApplicationRecord
 	scope :important, -> { where(important: true) }
 	scope :starred, -> { where(starred: true) }
 	scope :finished, -> { where(finished: true) }
+	scope :scheduled, -> { where.not(due_date: nil) }
+	scope :today, -> { where(due_date: "#{Date.today.to_time(:utc)}") }
 
 	def all_tags=(names)
 		self.tags = names.split(",").map do |name|

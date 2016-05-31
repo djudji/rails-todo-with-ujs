@@ -3,17 +3,13 @@ class TasksController < ApplicationController
 	before_action :set_tasks, only: [:index, :update]
 	
 	def index
-		if params[:tag]
-			@tasks = current_user.tasks.tagged_with(params[:tag])
-		elsif params[:important]
-			@tasks = current_user.tasks.important
-		elsif params[:starred]
-			@tasks = current_user.tasks.starred
-		elsif params[:finished]
-			@tasks = current_user.tasks.finished
-		else
 			@tasks
-		end
+			@tasks = current_user.tasks.tagged_with(params[:tag]) if params[:tag]
+			@tasks = current_user.tasks.important if params[:important]
+			@tasks = current_user.tasks.starred if params[:starred]
+			@tasks = current_user.tasks.finished if params[:finished]
+			@tasks = current_user.tasks.scheduled if params[:scheduled]
+			@tasks = current_user.tasks.today if params[:today]
 	end
 
 	def show

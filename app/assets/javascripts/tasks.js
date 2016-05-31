@@ -6,6 +6,8 @@ $(document).on('turbolinks:load', function() {
 		$(this).closest('form').submit();
 	});
 
+	
+
 });
 
 

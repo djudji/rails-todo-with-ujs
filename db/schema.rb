@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160527123238) do
+ActiveRecord::Schema.define(version: 20160531114333) do
 
   create_table "Tags_Tasks", id: false, force: :cascade do |t|
     t.integer "tag_id",  null: false
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 20160527123238) do
     t.integer  "user_id"
     t.boolean  "important"
     t.boolean  "starred"
+    t.datetime "start_date"
+    t.datetime "due_date"
   end
 
   create_table "users", force: :cascade do |t|

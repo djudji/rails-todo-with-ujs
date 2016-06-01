@@ -35,7 +35,7 @@
                       <%= render 'layouts/filters' %>
                       <p class="vspace-top-10 vspace-bottom-20">Tags</p>
                       <ul class="filter-list">
-                        <% current_user.tags.each do |tag| %>
+                        <% Tag.all.each do |tag| %>
                         <li><%= link_to tag.name, tag_path(tag.name) %></li>
                         <% end %>
                       </ul>

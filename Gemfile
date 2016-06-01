@@ -39,9 +39,13 @@ gem 'font-awesome-rails'
 # Add bootstrap modal gem
 gem 'bootstrap-modal-rails'
 
-# Bootrap Calendar
+# Bootstrap Calendar
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
+
+
+# Modernizr
+gem 'modernizr-rails', '~> 2.7', '>= 2.7.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

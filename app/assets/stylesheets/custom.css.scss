@@ -237,3 +237,13 @@ ul.f32 > li {
 	-moz-border-radius: 6px 0 6px 6px;
 	border-radius: 6px 0 6px 6px;
 }
+
+/* Drag and drop */
+
+.move-task {
+	cursor: move;
+}
+
+.task.over {
+  border: 2px dashed #000;
+}

@@ -32,46 +32,13 @@
                   			<% end %>
                       </div>
                 			<p class="vspace-top-10 vspace-bottom-20">Filters</p>
-                      <ul id="filter-list">
-                        <li>
-                          <%= link_to tasks_path(starred: true), class:"full-width-block" do %>
-                            <span class="fa fa-star" aria-hidden="true"></span> 
-                            <span class="hspace-left-15">Starred</span>
-                          <% end %>
-                        </li>
-                        <li>
-                          <%= link_to tasks_path(important: true), class:"vspace-top-5 vspace-bottom-5 full-width-block" do %>
-                            <span class="fa fa-exclamation-circle" aria-hidden="true"></span> 
-                            <span class="hspace-left-15">Priority</span>
-                          <% end %>
-                        </li>
-                        <li>
-                          <%= link_to tasks_path(scheduled: true), class:"vspace-top-5 vspace-bottom-5 full-width-block" do %>
-                            <span class="fa fa-clock-o" aria-hidden="true"></span> 
-                            <span class="hspace-left-15">Scheduled</span>
-                          <% end %>
-                        </li>
-                        <li>
-                          <%= link_to tasks_path(today: true), class:"vspace-top-5 vspace-bottom-5 full-width-block" do %>
-                            <span class="fa fa-calendar-o" aria-hidden="true"></span> 
-                            <span class="hspace-left-15">Today</span>
-                          <% end %>
-                        </li>
-                        <li>
-                          <%= link_to tasks_path(finished: true), class:"vspace-top-5 vspace-bottom-5 full-width-block" do %>
-                            <span class="fa fa-check" aria-hidden="true"></span> 
-                            <span class="hspace-left-15">Done</span>
-                          <% end %>
-                        </li>
-                        <li>
-                          <%= link_to "", class:"vspace-top-5 vspace-bottom-5 full-width-block" do %>
-                            <span class="fa fa-trash-o" aria-hidden="true"></span> 
-                            <span class="hspace-left-15">Deleted</span>
-                          <% end %>
-                        </li>
-                      </ul>
+                      <%= render 'layouts/filters' %>
                       <p class="vspace-top-10 vspace-bottom-20">Tags</p>
-
+                      <ul class="filter-list">
+                        <% current_user.tags.each do |tag| %>
+                        <li><%= link_to tag.name, tag_path(tag.name) %></li>
+                        <% end %>
+                      </ul>
                     </div>
               		</div>
               	</div>

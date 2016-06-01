@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160531114333) do
+ActiveRecord::Schema.define(version: 20160601093852) do
 
   create_table "Tags_Tasks", id: false, force: :cascade do |t|
     t.integer "tag_id",  null: false
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160531114333) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   create_table "tasks", force: :cascade do |t|

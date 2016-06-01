@@ -1,0 +1,38 @@
+<ul class="filter-list">
+  <li>
+    <%= link_to tasks_path(starred: true), class:"full-width-block" do %>
+      <span class="fa fa-star" aria-hidden="true"></span> 
+      <span class="hspace-left-15">Starred</span>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to tasks_path(important: true), class:"vspace-top-5 vspace-bottom-5 full-width-block" do %>
+      <span class="fa fa-exclamation-circle" aria-hidden="true"></span> 
+      <span class="hspace-left-15">Priority</span>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to tasks_path(scheduled: true), class:"vspace-top-5 vspace-bottom-5 full-width-block" do %>
+      <span class="fa fa-clock-o" aria-hidden="true"></span> 
+      <span class="hspace-left-15">Scheduled</span>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to tasks_path(today: true), class:"vspace-top-5 vspace-bottom-5 full-width-block" do %>
+      <span class="fa fa-calendar-o" aria-hidden="true"></span> 
+      <span class="hspace-left-15">Today</span>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to tasks_path(finished: true), class:"vspace-top-5 vspace-bottom-5 full-width-block" do %>
+      <span class="fa fa-check" aria-hidden="true"></span> 
+      <span class="hspace-left-15">Done</span>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to "", class:"vspace-top-5 vspace-bottom-5 full-width-block" do %>
+      <span class="fa fa-trash-o" aria-hidden="true"></span> 
+      <span class="hspace-left-15">Deleted</span>
+    <% end %>
+  </li>
+</ul>

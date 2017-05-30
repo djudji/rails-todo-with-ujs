@@ -1,24 +1,16 @@
-# README
+# Ruby on Rails - Todo list with a twist
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Not so simple Ruby on Rails Todo List web application.
 
-Things you may want to cover:
+Features:
+- List tasks in containers
+- Drag and drop tasks
+- Change states of tasks (_important_, _done_, _starred_)
+- Add calendar appointments
+- Implement tags for tasks
+- Use UJS to mimic SinglePage app performance and looks
 
-* Ruby version
+Built with:
+- [Rails 5][rails]
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  [rails]:    <http://rubyonrails.org/>

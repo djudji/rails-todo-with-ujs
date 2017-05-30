@@ -6,7 +6,6 @@ $(document).on('turbolinks:load', function() {
 	});
 
 	if (Modernizr.draganddrop) {
-  	
   	var dragSrcEl = null;
 
 		function handleDragStart(e) {
@@ -73,7 +72,7 @@ $(document).on('turbolinks:load', function() {
 		  task.addEventListener('drop', handleDrop, false);
 			task.addEventListener('dragend', handleDragEnd, false);
 		});
-	} 
+	}
 	else {
 	  // Fallback to a library solution.
 	}
